@@ -3,11 +3,11 @@
 Este repositorio contiene código en vivo del servidor de promoción.
 El mod es estable y tiene todos los problemas conocidos resueltos, puedes usarlo según tus necesidades libremente, solo deja créditos. Siéntete libre de contribuir al proyecto.
 
-Visítenos en [Discord KFC]((https://discord.gg/Pss9ff2MH5)) o únase al [servidor](https://www.gametracker.com/search/cod4/?query=KFC)
+Visítenos en [Discord KFC](https://discord.gg/Pss9ff2MH5) o únase al [servidor](https://www.gametracker.com/search/cod4/?query=KFC)
 
 ## Características
 
-- Este es un mod creado a partir de una versión limpia de [Promod V2.20](https://github.com/cod4mw/promod), solo están disponibles los modos custom_public y strat, la mayoría de las funciones de promoción se han eliminado, todo lo que no es necesario para los servidores de pub.
+- Este es un mod creado a partir de una versión limpia de [Promod V2.20](https://promod.github.io/), solo están disponibles los modos custom_public y strat, la mayoría de las funciones de promoción se han eliminado, todo lo que no es necesario para los servidores de pub.
 - Se han solucionado errores antiguos de los archivos promod y cod4 y hay actualizaciones del código que optimizan el mod y el servidor. eBc Promod es un mod bastante pesado, pero funcionará bastante bien con más de 100 MB de RAM que un servidor promocional típico o similar. El uso promedio para un servidor de 24 ranuras lleno y activo es de alrededor de 300-350 MB de RAM, o menos si reinicia el servidor diariamente, el mod ha estado funcionando durante semanas en ocasiones sin fallas ni reinicios.
 - El mod presenta rangos que se eliminaron en la promoción y también incluye prestigios que no estaban disponibles en la versión para PC del juego. Hay 55 niveles y 30 niveles de prestigio. Con la configuración actual, los jugadores necesitan entre 4 y 5 meses de juego activo para alcanzar el nivel/límite de prestigio.
 - El mod presenta temporadas que cambian cada 6 meses, incluido el reinicio de prestigio y rango. Después de cada temporada, los jugadores reciben premios en función del prestigio alcanzado. El servidor ejecuta una verificación de prestigio de los jugadores para evitar la explotación, también se registran muchos elementos para verificar fácilmente qué está sucediendo con la base de jugadores y el servidor.
