@@ -58,7 +58,7 @@ En caso de que no quieras ejecutar MySQL, siempre puedes optar por el almacenami
 - /promod/
 - /kfc/
 - /scripts/
-- /camuflage Animado
+- /server binary
 - /config.cfg
 - /mod.ff
 - / archivos .iwd, dependiendo de cómo divida los activos
