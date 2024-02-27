@@ -1,0 +1,1133 @@
+/*
+  Copyright (c) 2009-2017 Andreas Göransson <andreas.goransson@gmail.com>
+  Copyright (c) 2009-2017 Indrek Ardel <indrek@ardel.eu>
+
+  This file is part of Call of Duty 4 Promod.
+
+  Call of Duty 4 Promod is licensed under Promod Modder Ethical Public License.
+  Terms of license can be found in LICENSE.md document bundled with the project.
+*/
+
+#include "ui/menudefinition.h";
+{
+    menuDef
+    {
+        name                      "changeclass_marines_mw"
+        rect                      0 0 640 480 HORIZONTAL_ALIGN_SUBLEFT VERTICAL_ALIGN_SUBTOP
+        borderSize                1
+        foreColor                 1 1 1 1
+        backColor                 0 0 0 0
+        borderColor               0 0 0 0
+        outlineColor              0 0 0 0
+        blurWorld                 7
+        onOpen                    { setLocalVarInt ui_highlight  ; setLocalVarString ui_team marines  }
+        onESC                     { close self ;  }
+        execKey                   "5" { scriptMenuResponse killspec ;  }
+        execKey                   "4" { scriptMenuResponse sniper ;  }
+        execKey                   "3" { scriptMenuResponse demolitions ;  }
+        execKey                   "2" { scriptMenuResponse specops ;  }
+        execKey                   "1" { scriptMenuResponse assault ;  }
+        focusColor                1 1 1 1
+        disableColor              0 0 0 0
+        visible 0                 
+        itemDef
+        {
+            rect                      0 0 640 480 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_FULLSCREEN
+            style                     WINDOW_STYLE_FILLED
+            borderSize                1
+            foreColor                 1 1 1 1
+            backColor                 0 0 0 0.75
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textScale                 0.55
+            visible 1                 
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 0 854 75 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_SUBTOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 1 1 1 1
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "gradient_top"
+            textScale                 0.55
+            visible 1                 
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 405 854 75 HORIZONTAL_ALIGN_FULLSCREEN VERTICAL_ALIGN_SUBTOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 1 1 1 1
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "gradient_bottom"
+            textScale                 0.55
+            visible 1                 
+            decoration                
+        }
+        itemDef
+        {
+            rect                      48 40 0 0 HORIZONTAL_ALIGN_SUBLEFT VERTICAL_ALIGN_SUBTOP
+            borderSize                1
+            foreColor                 1 0.8 0.4 1
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textFont                  UI_FONT_NORMAL
+            textAlign                 ITEM_ALIGN_TOP_LEFT
+            textAlignX                -36
+            textAlignY                -36
+            textScale                 0.5833
+            textStyle                 ITEM_TEXTSTYLE_SHADOWEDMORE
+            exp                       text ( ( "@MPUI_CHOOSE_CLASS_CAP" ) );
+            visible 1                 
+            decoration                
+        }
+        itemDef
+        {
+            rect                      -120 -32 378 64 HORIZONTAL_ALIGN_SUBLEFT VERTICAL_ALIGN_SUBTOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0.9 0.9 0.95 0.175
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "white"
+            textScale                 0.55
+            visible 1                 
+            decoration                
+        }
+        itemDef
+        {
+            rect                      258 -32 16 -64 HORIZONTAL_ALIGN_SUBLEFT VERTICAL_ALIGN_SUBTOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0.9 0.9 0.95 0.175
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "button_highlight_end"
+            textScale                 0.55
+            visible 1                 
+            decoration                
+        }
+        itemDef
+        {
+            rect                      56 448 528 40 HORIZONTAL_ALIGN_SUBLEFT VERTICAL_ALIGN_SUBTOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0.9 0.9 0.95 0.175
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "white"
+            textScale                 0.55
+            visible 1                 
+            decoration                
+        }
+        itemDef
+        {
+            rect                      584 448 16 64 HORIZONTAL_ALIGN_SUBLEFT VERTICAL_ALIGN_SUBTOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0.9 0.9 0.95 0.175
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "button_highlight_end"
+            textScale                 0.55
+            visible 1                 
+            decoration                
+        }
+        itemDef
+        {
+            rect                      40 448 -16 64 HORIZONTAL_ALIGN_SUBLEFT VERTICAL_ALIGN_SUBTOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0.9 0.9 0.95 0.175
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "button_highlight_end"
+            textScale                 0.55
+            visible 1                 
+            decoration                
+        }
+        itemDef
+        {
+            rect                      -120 464 160 32 HORIZONTAL_ALIGN_SUBLEFT VERTICAL_ALIGN_SUBTOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0.9 0.9 0.95 0.175
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "white"
+            textScale                 0.55
+            visible 1                 
+            decoration                
+        }
+        itemDef
+        {
+            rect                      600 464 160 32 HORIZONTAL_ALIGN_SUBLEFT VERTICAL_ALIGN_SUBTOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0.9 0.9 0.95 0.175
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "white"
+            textScale                 0.55
+            visible 1                 
+            decoration                
+        }
+        itemDef
+        {
+            name                      "back"
+            rect                      -250 -26 40 20 HORIZONTAL_ALIGN_CENTER VERTICAL_ALIGN_BOTTOM
+            style                     WINDOW_STYLE_FILLED
+            borderSize                1
+            foreColor                 1 1 1 1
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            type                      ITEM_TYPE_BUTTON
+            textFont                  UI_FONT_NORMAL
+            textAlignY                18
+            textScale                 0.375
+            textStyle                 ITEM_TEXTSTYLE_SHADOWED
+            text                      "@MENU_BACK"
+            mouseEnter                { play mouse_over ;  }
+            action                    { play mouse_click ; close self ; ;  }
+            visible                   when ( ( 1 ) )
+        }
+        itemDef
+        {
+            rect                      10 58 128 128 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 1 1 1 0.275
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textScale                 0.55
+            exp                       material ( ( dvarstring( "g_TeamIcon_Allies" ) ) );
+            visible                   when ( ( localvarstring( "ui_team" ) == "marines" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      10 58 128 128 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 1 1 1 0.275
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textScale                 0.55
+            exp                       material ( ( dvarstring( "g_TeamIcon_Axis" ) ) );
+            visible                   when ( ( localvarstring( "ui_team" ) == "opfor" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      10 58 128 128 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 1 1 1 0.275
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textScale                 0.55
+            exp                       material ( ( dvarstring( "g_TeamIcon_Allies" ) ) );
+            visible                   when ( ( team( "name" ) == "TEAM_FREE" && localvarstring( "ui_team" ) == "marines" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      10 58 128 128 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 1 1 1 0.275
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textScale                 0.55
+            exp                       material ( ( dvarstring( "g_TeamIcon_Axis" ) ) );
+            visible                   when ( ( team( "name" ) == "TEAM_FREE" && localvarstring( "ui_team" ) == "opfor" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      10 196 128 128 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            borderSize                1
+            foreColor                 1 1 1 0.2
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textFont                  UI_FONT_OBJECTIVE
+            textScale                 0.4583
+            textStyle                 ITEM_TEXTSTYLE_SHADOWEDMORE
+            exp                       text ( ( "@" + dvarstring( "g_TeamName_Allies" ) ) );
+            visible                   when ( ( team( "name" ) == "TEAM_ALLIES" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      10 196 128 128 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            borderSize                1
+            foreColor                 1 1 1 0.2
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textFont                  UI_FONT_OBJECTIVE
+            textScale                 0.4583
+            textStyle                 ITEM_TEXTSTYLE_SHADOWEDMORE
+            exp                       text ( ( "@" + dvarstring( "g_TeamName_Allies" ) ) );
+            visible                   when ( ( team( "name" ) == "TEAM_FREE" && localvarstring( "ui_team" ) == "marines" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      10 196 128 128 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            borderSize                1
+            foreColor                 1 1 1 0.2
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textFont                  UI_FONT_OBJECTIVE
+            textScale                 0.4583
+            textStyle                 ITEM_TEXTSTYLE_SHADOWEDMORE
+            exp                       text ( ( "@" + dvarstring( "g_TeamName_Axis" ) ) );
+            visible                   when ( ( team( "name" ) == "TEAM_AXIS" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      10 196 128 128 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            borderSize                1
+            foreColor                 1 1 1 0.2
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textFont                  UI_FONT_OBJECTIVE
+            textScale                 0.4583
+            textStyle                 ITEM_TEXTSTYLE_SHADOWEDMORE
+            exp                       text ( ( "@" + dvarstring( "g_TeamName_Axis" ) ) );
+            visible                   when ( ( team( "name" ) == "TEAM_FREE" && localvarstring( "ui_team" ) == "opfor" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 34 214.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0 0 0 0
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textScale                 0.55
+            exp                       material ( ( "gradient_fadein" ) );
+            visible                   when ( ( dvarbool( "allies_allow_assault" ) || dvarstring( "loadout_curclass" ) == "assault" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      214.5 34 5.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0 0 0 0
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "button_highlight_end"
+            textScale                 0.55
+            visible                   when ( ( dvarbool( "allies_allow_assault" ) || dvarstring( "loadout_curclass" ) == "assault" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 34 214.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                2
+            foreColor                 0.9 0.95 1 0.35
+            backColor                 0 0 0 0
+            borderColor               0.8 0.95 1 0.4
+            outlineColor              0 0 0 0
+            background                "gradient_fadein"
+            textScale                 0.55
+            visible                   when ( ( localvarint( "ui_highlight" ) == 1 && localvarstring( "ui_choicegroup" ) == "" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      214.5 34 5.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0.9 0.95 1 0.35
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "button_highlight_end"
+            textScale                 0.55
+            visible                   when ( ( localvarint( "ui_highlight" ) == 1 && localvarstring( "ui_choicegroup" ) == "" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 34 220 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            borderSize                1
+            foreColor                 0.69 0.69 0.69 1
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            type                      ITEM_TYPE_BUTTON
+            textFont                  UI_FONT_NORMAL
+            textAlign                 ITEM_ALIGN_MIDDLE_RIGHT
+            textAlignX                -10
+            textScale                 0.4
+            textStyle                 ITEM_TEXTSTYLE_SHADOWEDMORE
+            action                    { play mouse_click ; scriptMenuResponse assault ; ;  }
+            onFocus                   { play mouse_over ; setLocalVarInt ui_highlight 1 ; setLocalVarString ui_choicegroup  ; ;  }
+            leaveFocus                { setLocalVarInt ui_highlight 0 ; ;  }
+            exp                       text ( ( "1. Assault" ) );
+            visible                   when ( ( dvarbool( "allies_allow_assault" ) || dvarstring( "loadout_curclass" ) == "assault" ) )
+        }
+        itemDef
+        {
+            rect                      0 34 214.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0 0 0 0
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textScale                 0.55
+            exp                       material ( ( "gradient_fadein" ) );
+            visible                   when ( ( ! dvarbool( "allies_allow_assault" ) && dvarstring( "loadout_curclass" ) != "assault" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      214.5 34 5.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0 0 0 0
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "button_highlight_end"
+            textScale                 0.55
+            visible                   when ( ( ! dvarbool( "allies_allow_assault" ) && dvarstring( "loadout_curclass" ) != "assault" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 34 220 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            borderSize                1
+            foreColor                 0.5 0.5 0.5 0.5
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textFont                  UI_FONT_NORMAL
+            textAlign                 ITEM_ALIGN_MIDDLE_RIGHT
+            textAlignX                -10
+            textScale                 0.4
+            textStyle                 ITEM_TEXTSTYLE_SHADOWEDMORE
+            exp                       text ( ( "1. Assault" ) );
+            visible                   when ( ( ! dvarbool( "allies_allow_assault" ) && dvarstring( "loadout_curclass" ) != "assault" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 58 214.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0 0 0 0
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textScale                 0.55
+            exp                       material ( ( "gradient_fadein" ) );
+            visible                   when ( ( dvarbool( "allies_allow_specops" ) || dvarstring( "loadout_curclass" ) == "specops" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      214.5 58 5.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0 0 0 0
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "button_highlight_end"
+            textScale                 0.55
+            visible                   when ( ( dvarbool( "allies_allow_specops" ) || dvarstring( "loadout_curclass" ) == "specops" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 58 214.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                2
+            foreColor                 0.9 0.95 1 0.35
+            backColor                 0 0 0 0
+            borderColor               0.8 0.95 1 0.4
+            outlineColor              0 0 0 0
+            background                "gradient_fadein"
+            textScale                 0.55
+            visible                   when ( ( localvarint( "ui_highlight" ) == 2 && localvarstring( "ui_choicegroup" ) == "" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      214.5 58 5.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0.9 0.95 1 0.35
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "button_highlight_end"
+            textScale                 0.55
+            visible                   when ( ( localvarint( "ui_highlight" ) == 2 && localvarstring( "ui_choicegroup" ) == "" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 58 220 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            borderSize                1
+            foreColor                 0.69 0.69 0.69 1
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            type                      ITEM_TYPE_BUTTON
+            textFont                  UI_FONT_NORMAL
+            textAlign                 ITEM_ALIGN_MIDDLE_RIGHT
+            textAlignX                -10
+            textScale                 0.4
+            textStyle                 ITEM_TEXTSTYLE_SHADOWEDMORE
+            action                    { play mouse_click ; scriptMenuResponse specops ; ;  }
+            onFocus                   { play mouse_over ; setLocalVarInt ui_highlight 2 ; setLocalVarString ui_choicegroup  ; ;  }
+            leaveFocus                { setLocalVarInt ui_highlight 0 ; ;  }
+            exp                       text ( ( "2. Spec Ops" ) );
+            visible                   when ( ( dvarbool( "allies_allow_specops" ) || dvarstring( "loadout_curclass" ) == "specops" ) )
+        }
+        itemDef
+        {
+            rect                      0 58 214.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0 0 0 0
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textScale                 0.55
+            exp                       material ( ( "gradient_fadein" ) );
+            visible                   when ( ( ! dvarbool( "allies_allow_specops" ) && dvarstring( "loadout_curclass" ) != "specops" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      214.5 58 5.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0 0 0 0
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "button_highlight_end"
+            textScale                 0.55
+            visible                   when ( ( ! dvarbool( "allies_allow_specops" ) && dvarstring( "loadout_curclass" ) != "specops" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 58 220 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            borderSize                1
+            foreColor                 0.5 0.5 0.5 0.5
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textFont                  UI_FONT_NORMAL
+            textAlign                 ITEM_ALIGN_MIDDLE_RIGHT
+            textAlignX                -10
+            textScale                 0.4
+            textStyle                 ITEM_TEXTSTYLE_SHADOWEDMORE
+            exp                       text ( ( "2. Spec Ops" ) );
+            visible                   when ( ( ! dvarbool( "allies_allow_specops" ) && dvarstring( "loadout_curclass" ) != "specops" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 82 214.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0 0 0 0
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textScale                 0.55
+            exp                       material ( ( "gradient_fadein" ) );
+            visible                   when ( ( dvarbool( "allies_allow_demolitions" ) || dvarstring( "loadout_curclass" ) == "demolitions" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      214.5 82 5.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0 0 0 0
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "button_highlight_end"
+            textScale                 0.55
+            visible                   when ( ( dvarbool( "allies_allow_demolitions" ) || dvarstring( "loadout_curclass" ) == "demolitions" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 82 214.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                2
+            foreColor                 0.9 0.95 1 0.35
+            backColor                 0 0 0 0
+            borderColor               0.8 0.95 1 0.4
+            outlineColor              0 0 0 0
+            background                "gradient_fadein"
+            textScale                 0.55
+            visible                   when ( ( localvarint( "ui_highlight" ) == 3 && localvarstring( "ui_choicegroup" ) == "" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      214.5 82 5.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0.9 0.95 1 0.35
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "button_highlight_end"
+            textScale                 0.55
+            visible                   when ( ( localvarint( "ui_highlight" ) == 3 && localvarstring( "ui_choicegroup" ) == "" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 82 220 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            borderSize                1
+            foreColor                 0.69 0.69 0.69 1
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            type                      ITEM_TYPE_BUTTON
+            textFont                  UI_FONT_NORMAL
+            textAlign                 ITEM_ALIGN_MIDDLE_RIGHT
+            textAlignX                -10
+            textScale                 0.4
+            textStyle                 ITEM_TEXTSTYLE_SHADOWEDMORE
+            action                    { play mouse_click ; scriptMenuResponse demolitions ; ;  }
+            onFocus                   { play mouse_over ; setLocalVarInt ui_highlight 3 ; setLocalVarString ui_choicegroup  ; ;  }
+            leaveFocus                { setLocalVarInt ui_highlight 0 ; ;  }
+            exp                       text ( ( "3. Demolitions" ) );
+            visible                   when ( ( dvarbool( "allies_allow_demolitions" ) || dvarstring( "loadout_curclass" ) == "demolitions" ) )
+        }
+        itemDef
+        {
+            rect                      0 82 214.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0 0 0 0
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textScale                 0.55
+            exp                       material ( ( "gradient_fadein" ) );
+            visible                   when ( ( ! dvarbool( "allies_allow_demolitions" ) && dvarstring( "loadout_curclass" ) != "demolitions" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      214.5 82 5.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0 0 0 0
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "button_highlight_end"
+            textScale                 0.55
+            visible                   when ( ( ! dvarbool( "allies_allow_demolitions" ) && dvarstring( "loadout_curclass" ) != "demolitions" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 82 220 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            borderSize                1
+            foreColor                 0.5 0.5 0.5 0.5
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textFont                  UI_FONT_NORMAL
+            textAlign                 ITEM_ALIGN_MIDDLE_RIGHT
+            textAlignX                -10
+            textScale                 0.4
+            textStyle                 ITEM_TEXTSTYLE_SHADOWEDMORE
+            exp                       text ( ( "3. Demolitions" ) );
+            visible                   when ( ( ! dvarbool( "allies_allow_demolitions" ) && dvarstring( "loadout_curclass" ) != "demolitions" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 106 214.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0 0 0 0
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textScale                 0.55
+            exp                       material ( ( "gradient_fadein" ) );
+            visible                   when ( ( dvarbool( "allies_allow_sniper" ) || dvarstring( "loadout_curclass" ) == "sniper" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      214.5 106 5.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0 0 0 0
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "button_highlight_end"
+            textScale                 0.55
+            visible                   when ( ( dvarbool( "allies_allow_sniper" ) || dvarstring( "loadout_curclass" ) == "sniper" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 106 214.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                2
+            foreColor                 0.9 0.95 1 0.35
+            backColor                 0 0 0 0
+            borderColor               0.8 0.95 1 0.4
+            outlineColor              0 0 0 0
+            background                "gradient_fadein"
+            textScale                 0.55
+            visible                   when ( ( localvarint( "ui_highlight" ) == 4 && localvarstring( "ui_choicegroup" ) == "" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      214.5 106 5.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0.9 0.95 1 0.35
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "button_highlight_end"
+            textScale                 0.55
+            visible                   when ( ( localvarint( "ui_highlight" ) == 4 && localvarstring( "ui_choicegroup" ) == "" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 106 220 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            borderSize                1
+            foreColor                 0.69 0.69 0.69 1
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            type                      ITEM_TYPE_BUTTON
+            textFont                  UI_FONT_NORMAL
+            textAlign                 ITEM_ALIGN_MIDDLE_RIGHT
+            textAlignX                -10
+            textScale                 0.4
+            textStyle                 ITEM_TEXTSTYLE_SHADOWEDMORE
+            action                    { play mouse_click ; scriptMenuResponse sniper ; ;  }
+            onFocus                   { play mouse_over ; setLocalVarInt ui_highlight 4 ; setLocalVarString ui_choicegroup  ; ;  }
+            leaveFocus                { setLocalVarInt ui_highlight 0 ; ;  }
+            exp                       text ( ( "4. Sniper" ) );
+            visible                   when ( ( dvarbool( "allies_allow_sniper" ) || dvarstring( "loadout_curclass" ) == "sniper" ) )
+        }
+        itemDef
+        {
+            rect                      0 106 214.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0 0 0 0
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textScale                 0.55
+            exp                       material ( ( "gradient_fadein" ) );
+            visible                   when ( ( ! dvarbool( "allies_allow_sniper" ) && dvarstring( "loadout_curclass" ) != "sniper" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      214.5 106 5.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0 0 0 0
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "button_highlight_end"
+            textScale                 0.55
+            visible                   when ( ( ! dvarbool( "allies_allow_sniper" ) && dvarstring( "loadout_curclass" ) != "sniper" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 106 220 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            borderSize                1
+            foreColor                 0.5 0.5 0.5 0.5
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textFont                  UI_FONT_NORMAL
+            textAlign                 ITEM_ALIGN_MIDDLE_RIGHT
+            textAlignX                -10
+            textScale                 0.4
+            textStyle                 ITEM_TEXTSTYLE_SHADOWEDMORE
+            exp                       text ( ( "4. Sniper" ) );
+            visible                   when ( ( ! dvarbool( "allies_allow_sniper" ) && dvarstring( "loadout_curclass" ) != "sniper" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 154 214.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0 0 0 0
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textScale                 0.55
+            exp                       material ( ( "gradient_fadein" ) );
+            visible 1                 
+            decoration                
+        }
+        itemDef
+        {
+            rect                      214.5 154 5.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0 0 0 0
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "button_highlight_end"
+            textScale                 0.55
+            visible 1                 
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 154 214.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                2
+            foreColor                 0.9 0.95 1 0.35
+            backColor                 0 0 0 0
+            borderColor               0.8 0.95 1 0.4
+            outlineColor              0 0 0 0
+            background                "gradient_fadein"
+            textScale                 0.55
+            visible                   when ( ( localvarint( "ui_highlight" ) == 6 && localvarstring( "ui_choicegroup" ) == "" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      214.5 154 5.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0.9 0.95 1 0.35
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "button_highlight_end"
+            textScale                 0.55
+            visible                   when ( ( localvarint( "ui_highlight" ) == 6 && localvarstring( "ui_choicegroup" ) == "" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 154 220 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            borderSize                1
+            foreColor                 0.69 0.69 0.69 1
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            type                      ITEM_TYPE_BUTTON
+            textFont                  UI_FONT_NORMAL
+            textAlign                 ITEM_ALIGN_MIDDLE_RIGHT
+            textAlignX                -10
+            textScale                 0.4
+            textStyle                 ITEM_TEXTSTYLE_SHADOWEDMORE
+            action                    { play mouse_click ; scriptMenuResponse killspec ; ;  }
+            onFocus                   { play mouse_over ; setLocalVarInt ui_highlight 6 ; setLocalVarString ui_choicegroup  ; ;  }
+            leaveFocus                { setLocalVarInt ui_highlight 0 ; ;  }
+            exp                       text ( ( "5. Spectate Team" ) );
+            visible 1                 
+        }
+        itemDef
+        {
+            rect                      0 178 214.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                2
+            foreColor                 0.9 0.95 1 0.35
+            backColor                 0 0 0 0
+            borderColor               0.8 0.95 1 0.4
+            outlineColor              0 0 0 0
+            background                "gradient_fadein"
+            textScale                 0.55
+            visible                   when ( ( localvarint( "ui_highlight" ) == 7 && localvarstring( "ui_choicegroup" ) == "" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      214.5 178 5.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0.9 0.95 1 0.35
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "button_highlight_end"
+            textScale                 0.55
+            visible                   when ( ( localvarint( "ui_highlight" ) == 7 && localvarstring( "ui_choicegroup" ) == "" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 178 214.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                2
+            foreColor                 0.9 0.95 1 0.35
+            backColor                 0 0 0 0
+            borderColor               0.8 0.95 1 0.4
+            outlineColor              0 0 0 0
+            background                "gradient_fadein"
+            textScale                 0.55
+            visible                   when ( ( localvarint( "ui_highlight" ) == 7 && localvarstring( "ui_choicegroup" ) == "" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      214.5 178 5.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0.9 0.95 1 0.35
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "button_highlight_end"
+            textScale                 0.55
+            visible                   when ( ( localvarint( "ui_highlight" ) == 7 && localvarstring( "ui_choicegroup" ) == "" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 178 214.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0 0 0 0
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textScale                 0.55
+            exp                       material ( ( "gradient_fadein" ) );
+            visible 1                 
+            decoration                
+        }
+        itemDef
+        {
+            rect                      214.5 178 5.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0 0 0 0
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "button_highlight_end"
+            textScale                 0.55
+            visible 1                 
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 178 220 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            borderSize                1
+            foreColor                 0.69 0.69 0.69 1
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            type                      ITEM_TYPE_BUTTON
+            textFont                  UI_FONT_NORMAL
+            textAlign                 ITEM_ALIGN_MIDDLE_RIGHT
+            textAlignX                -10
+            textScale                 0.4
+            textStyle                 ITEM_TEXTSTYLE_SHADOWEDMORE
+            exp                       text ( ( "6. Fov/Scale" ) );
+            visible 1                 
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 178 340 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_FILLED
+            borderSize                1
+            foreColor                 0.69 0.69 0.69 1
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            type                      ITEM_TYPE_MULTI
+            textAlign                 ITEM_ALIGN_MIDDLE_LEFT
+            textAlignX                240
+            textScale                 0.4
+            textStyle                 ITEM_TEXTSTYLE_SHADOWED
+            action                    { play mouse_click ; ; ;  }
+            onFocus                   { play mouse_over ; setLocalVarInt ui_highlight 7 ; setLocalVarString ui_choicegroup  ; ;  }
+            leaveFocus                { setLocalVarInt ui_highlight 0 ; ;  }
+            dvar                      "cg_fovScale"
+            dvarFloatList             { "1.25" 1.25 "1.125" 1.125 "1.3" 1.3 "1.4" 1.4 "1.5" 1.5  }
+            visible 1                 
+        }
+        itemDef
+        {
+            rect                      0 202 214.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                2
+            foreColor                 0.9 0.95 1 0.35
+            backColor                 0 0 0 0
+            borderColor               0.8 0.95 1 0.4
+            outlineColor              0 0 0 0
+            background                "gradient_fadein"
+            textScale                 0.55
+            visible                   when ( ( localvarint( "ui_highlight" ) == 8 && localvarstring( "ui_choicegroup" ) == "" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      214.5 202 5.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0.9 0.95 1 0.35
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "button_highlight_end"
+            textScale                 0.55
+            visible                   when ( ( localvarint( "ui_highlight" ) == 8 && localvarstring( "ui_choicegroup" ) == "" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 202 214.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                2
+            foreColor                 0.9 0.95 1 0.35
+            backColor                 0 0 0 0
+            borderColor               0.8 0.95 1 0.4
+            outlineColor              0 0 0 0
+            background                "gradient_fadein"
+            textScale                 0.55
+            visible                   when ( ( localvarint( "ui_highlight" ) == 8 && localvarstring( "ui_choicegroup" ) == "" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      214.5 202 5.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0.9 0.95 1 0.35
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "button_highlight_end"
+            textScale                 0.55
+            visible                   when ( ( localvarint( "ui_highlight" ) == 8 && localvarstring( "ui_choicegroup" ) == "" ) )
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 202 214.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0 0 0 0
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            textScale                 0.55
+            exp                       material ( ( "gradient_fadein" ) );
+            visible 1                 
+            decoration                
+        }
+        itemDef
+        {
+            rect                      214.5 202 5.5 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_SHADER
+            borderSize                1
+            foreColor                 0 0 0 0
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            background                "button_highlight_end"
+            textScale                 0.55
+            visible 1                 
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 202 220 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            borderSize                1
+            foreColor                 0.69 0.69 0.69 1
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            type                      ITEM_TYPE_BUTTON
+            textFont                  UI_FONT_NORMAL
+            textAlign                 ITEM_ALIGN_MIDDLE_RIGHT
+            textAlignX                -10
+            textScale                 0.4
+            textStyle                 ITEM_TEXTSTYLE_SHADOWEDMORE
+            exp                       text ( ( "7. Fullbright" ) );
+            visible 1                 
+            decoration                
+        }
+        itemDef
+        {
+            rect                      0 202 340 22 HORIZONTAL_ALIGN_LEFT VERTICAL_ALIGN_TOP
+            style                     WINDOW_STYLE_FILLED
+            borderSize                1
+            foreColor                 0.69 0.69 0.69 1
+            backColor                 0 0 0 0
+            borderColor               0 0 0 0
+            outlineColor              0 0 0 0
+            type                      ITEM_TYPE_MULTI
+            textAlign                 ITEM_ALIGN_MIDDLE_LEFT
+            textAlignX                240
+            textScale                 0.4
+            textStyle                 ITEM_TEXTSTYLE_SHADOWED
+            action                    { play mouse_click ; ; ;  }
+            onFocus                   { play mouse_over ; setLocalVarInt ui_highlight 8 ; setLocalVarString ui_choicegroup  ; ;  }
+            leaveFocus                { setLocalVarInt ui_highlight 0 ; ;  }
+            dvar                      "r_fullbright"
+            dvarFloatList             { "^2Enable" 1 "^1Disable" 0  }
+            visible 1                 
+        }
+    }
+}
