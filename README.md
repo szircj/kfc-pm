@@ -51,3 +51,21 @@ Para Vanilla no necesitas ninguna dependencia, simplemente carga el mod y ejecut
 Todos los archivos que ejecutan .gsx deben tener su contraparte .gsc para el servidor Vanilla; en caso de que falten algunos, abra un problema o realice una solicitud de extracción.
 
 En caso de que no quieras ejecutar MySQL, siempre puedes optar por el almacenamiento de archivos localmente, aunque no lo recomiendo, MySQL es aproximadamente 2 veces más rápido que antes.
+
+## Archivos y carpetas necesarios para ejecutar el mod/servidor
+
+- /maps/
+- /promod/
+- /kfc/
+- /scripts/
+- /camuflage Animado
+- /config.cfg
+- /mod.ff
+- / archivos .iwd, dependiendo de cómo divida los activos
+
+Los archivos IWD contienen /imágenes, /sonidos y /armas.
+
+## Divertirse
+
+Gracias a todos los que contribuyeron a este proyecto. Espero que lo aproveches bien, siéntete libre de contribuir y realizar una solicitud de extracción si decides realizar algunas actualizaciones.
+El mod está en buen estado, pero siempre hay lugar para mejorar, el desarrollo activo de este mod se ha detenido y la fuente se está publicando, el mod aún recibirá correcciones y actualizaciones de las funciones existentes, en caso de que alguien decida contribuir con algo bueno. mejoras, te ayudaré con el trabajo. ¡Feliz codificación!
