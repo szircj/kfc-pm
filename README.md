@@ -9,7 +9,7 @@ Visítenos en [Discord KFC](https://discord.gg/Pss9ff2MH5) o únase al [servidor
 
 - Este es un mod creado a partir de una versión limpia de [Promod V2.20](https://promod.github.io/), solo están disponibles los modos custom_public y strat, la mayoría de las funciones de promoción se han eliminado, todo lo que no es necesario para los servidores de pub.
 - Se han solucionado errores antiguos de los archivos promod y cod4 y hay actualizaciones del código que optimizan el mod y el servidor. KFC Promod es un mod bastante pesado, pero funcionará bastante bien con más de 100 MB de RAM que un servidor promocional típico o similar. El uso promedio para un servidor de 22 ranuras lleno y activo es de alrededor de 300-350 MB de RAM, o menos si reinicia el servidor diariamente, el mod ha estado funcionando durante semanas en ocasiones sin fallas ni reinicios.
-- El mod presenta rangos que se eliminaron en la promoción y también incluye Las Banderas de tu Ubicacion del juego. Hay Camuflajes Animado . Con la configuración actual.
+- El mod presenta rangos que se eliminaron en la promoción y también incluye Las Banderas de tu Ubicacion del juego. Hay Camuflajes Animado Con la configuración actual.
 - Puedes encontrar modelos de camuflajes personalizados, fluides  que han sido portados desde diferentes mods/juegos.
 - Mod ejecuta soporte SQL para ampliar las posibilidades de modificación y acceso a datos adminmod y otras bases de datos SQL para proporcionar una fácil integración con cualquier aplicación que ejecute.
 - Mod está diseñado principalmente para los tipos de juego S&D y pero también puedes acceder a otros tipos de juego personalizados; ten en cuenta que no todos los tipos de juego de mixmod están disponibles aquí.
