@@ -1,4 +1,4 @@
-// Provided by szir for KFC promod
+// Provided by szir & Hakai for KFC promod
 // Original work of crazy
 
 init()
