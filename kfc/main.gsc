@@ -1,4 +1,4 @@
-// Made by szir for KFC Mod
+// Made by szir & Hakai for KFC Mod
 
 init()
 {
@@ -14,8 +14,9 @@ serverHandler()
 {
 	thread kfc\_flags::init();
 	thread kfc\_cmds::main(); 
-	thread setServerDvar();
-        thread kfc\balance::_init();
+	thread kfc\balance::_init();
+        thread setServerDvar();
+       
         
 }
 
