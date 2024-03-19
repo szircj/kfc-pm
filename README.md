@@ -1,7 +1,7 @@
 ## KFCPromod.eu Promod v1 2.60
 
 
-## ![GitHub]([https://img.shields.io/github/license/szircj/kfc_promod]
+## ![GitHub](https://img.shields.io/github/license/szircj/kfc_promod)
 
 Este repositorio contiene código en vivo del servidor de promoción.
 El mod es estable y tiene todos los problemas conocidos resueltos, puedes usarlo según tus necesidades libremente, solo deja créditos. Siéntete libre de contribuir al proyecto.
