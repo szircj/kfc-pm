@@ -1,5 +1,5 @@
 ## KFC Promod 
-[![Badge License]: (https://img.shields.io/badge/License-GPL3-015d93.svg?style=for-the-badge&labelColor=blue)
+[![Badge License]: (https://img.shields.io/badge/License-GPL3-015d93.svg?style=for-the-badge&labelColor=blue)]
 
 Este repositorio contiene código en vivo del servidor de promoción.
 El mod es estable y tiene todos los problemas conocidos resueltos, puedes usarlo según tus necesidades libremente, solo deja créditos. Siéntete libre de contribuir al proyecto.
