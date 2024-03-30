@@ -126,7 +126,7 @@
 		}
 		itemDef
 		{
-			text			"www.codpromod.com"
+			text			"www.kfc-promod.com"
 			style			0
 			textscale		0.2
 			textstyle		3
@@ -141,7 +141,7 @@
 		}
 		itemDef
 		{
-			text			"Current Promod Version: LIVE V2.20 EU"
+			text			"Current Promod Version: LIVE V2.60 KFC"
 			style			0
 			textscale		0.25
 			textstyle		3
@@ -156,7 +156,7 @@
 		}
 		itemDef
 		{
-			text			"Maintained by Ingram"
+			text			"Maintained by szir"
 			style			0
 			textscale		0.25
 			textstyle		3
@@ -171,7 +171,7 @@
 		}
 		itemDef
 		{
-			text			"Former developers: raf1, MavLP, bulletworm, Trivve"
+			text			"Former developers: szir, xudo, yowisf"
 			style			0
 			textscale		0.25
 			textstyle		3
