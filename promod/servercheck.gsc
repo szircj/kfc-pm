@@ -1,12 +1,3 @@
-/*
-  Copyright (c) 2009-2017 Andreas Göransson <andreas.goransson@gmail.com>
-  Copyright (c) 2009-2017 Indrek Ardel <indrek@ardel.eu>
-
-  This file is part of Call of Duty 4 Promod.
-
-  Call of Duty 4 Promod is licensed under Promod Modder Ethical Public License.
-  Terms of license can be found in LICENSE.md document bundled with the project.
-*/
 
 main()
 {
@@ -23,7 +14,8 @@ main()
 		forceDvar( "sv_disableClientConsole", "0" );
 		forceDvar( "sv_fps", "20" );
 		forceDvar( "sv_pure", "1" );
-		forceDvar( "sv_maxrate", "25000" );
+		// CoD4X supports 100 000, stock client doesnt
+		//forceDvar( "sv_maxrate", "100000" );
 		forceDvar( "g_gravity", "680" );
 		forceDvar( "g_speed", "194" );
 		forceDvar( "g_knockback", "1000" );
