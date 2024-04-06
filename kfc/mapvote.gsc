@@ -1,4 +1,4 @@
-// Provided by szir & Hakai for KFC promod
+// Provided by szir for KFC promod
 // Do not thread it elsewhere as it is threaded in globallogic correctly
 
 init()
