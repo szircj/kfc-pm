@@ -2914,6 +2914,25 @@ Callback_PlayerConnect()
 	self.teamkillsThisRound = 0;
 
 	self.pers["lives"] = level.numLives;
+        self.pers["knifes"] = 0;
+	self.pers["meleeKills"] = 0;
+	self.hasSpawned = false;
+	self.waitingToSpawn = false;
+	self.deathCount = 0;
+@@ -2357,6 +2357,13 @@ Callback_PlayerConnect()
+	}
+	if(!isDefined(self.pers["verified"]))
+	{
+		self.pers["totalKills"] = 0;
+		self.pers["totalDeaths"] = 0;
+		self.pers["meleeKills"] = 0;
+		self.pers["explosiveKills"] = 0;
+		self.pers["plants"] = 0;
+		self.pers["defuses"] = 0;
+
+		// Wait till spawned for some of these as more players connect in the same time rather than spawn ?
+		scripts\sql::critical_enter("mysql");
+		q_str = "SELECT guid, prestige, backup_pr, season, status, style, award_tier, donation_tier FROM player_core WHERE guid LIKE " + self.guid;
 
 	self.hasSpawned = false;
 	self.waitingToSpawn = false;
