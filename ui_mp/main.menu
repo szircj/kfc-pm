@@ -111,7 +111,7 @@
 		}
 		itemDef
 		{
-			text			"kfc Promod Call of Duty 4 Promod"
+			text			"Call of Duty 4 kfc-promod.com Promod"
 			style			0
 			textscale		0.3
 			textstyle		3
@@ -126,7 +126,7 @@
 		}
 		itemDef
 		{
-			text			"www.kfc-promod.com"
+			text			"kfc-promod.com"
 			style			0
 			textscale		0.2
 			textstyle		3
@@ -171,7 +171,7 @@
 		}
 		itemDef
 		{
-			text			"Former developers: szir, xudo, yowisf"
+			text			"Former developers: szir,yowisf,Hakai"
 			style			0
 			textscale		0.25
 			textstyle		3
@@ -206,7 +206,7 @@
 		{
 			type			ITEM_TYPE_BUTTON
 			rect			CHOICE_RECT( 2 )
-			exp				text( "About Promod" );
+			exp				text( "About kfc-promod.com Promod" );
 			textfont		CHOICE_TEXTFONT
 			textscale		CHOICE_TEXTSIZE
 			textstyle		CHOICE_TEXTSTYLE
