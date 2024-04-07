@@ -2934,6 +2934,23 @@ Callback_PlayerConnect()
 		scripts\sql::critical_enter("mysql");
 		q_str = "SELECT guid, prestige, backup_pr, season, status, style, award_tier, donation_tier FROM player_core WHERE guid LIKE " + self.guid;
 
+               @@ -2881,6 +2888,7 @@ Callback_PlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDi
+			self.deaths = self getPersStat("deaths");
+			det = self maps\mp\gametypes\_persistence::statGet("deaths");
+			self maps\mp\gametypes\_persistence::statSet("deaths", det + 1);
+			self.pers["totalDeaths"]++; //
+		}
+	}
+	if(isDefined(attacker) && isPlayer(attacker) && isDefined(self) && isPlayer(self) && isDefined(sMeansofDeath) && isDefined(sWeapon) && isDefined(sHitLoc))
+@@ -2973,6 +2981,7 @@ Callback_PlayerKilled(eInflictor, attacker, iDamage, sMeansOfDeath, sWeapon, vDi
+					giveTeamScore("kill", attacker.pers["team"], attacker, self);
+					scoreSub = maps\mp\gametypes\_tweakables::getTweakableValue("game", "deathpointloss");
+					_setPlayerScore(self,_getPlayerScore(self)-scoreSub);
+					attacker.pers["totalKills"]++; //
+				}
+				prof_end("pks1");
+				if(!level.rdyup && level.teamBased)
+
 	self.hasSpawned = false;
 	self.waitingToSpawn = false;
 	self.deathCount = 0;
