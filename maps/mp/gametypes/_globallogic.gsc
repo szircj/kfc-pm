@@ -1,12 +1,3 @@
-/*
-  Copyright (c) 2009-2017 Andreas Göransson <andreas.goransson@gmail.com>
-  Copyright (c) 2009-2017 Indrek Ardel <indrek@ardel.eu>
-
-  This file is part of Call of Duty 4 Promod.
-
-  Call of Duty 4 Promod is licensed under Promod Modder Ethical Public License.
-  Terms of license can be found in LICENSE.md document bundled with the project.
-*/
 
 #include maps\mp\_utility;
 #include maps\mp\gametypes\_hud_util;
@@ -14,7 +5,9 @@
 
  init()
 {
-	if ( !isDefined( level.tweakablesInitialized ) )
+
+              level.gametype=toLower(getDvar("g_gametype"));
+              if ( !isDefined( level.tweakablesInitialized ) )
 		maps\mp\gametypes\_tweakables::init();
 
 	level.splitscreen = 0;
@@ -115,43 +108,35 @@ registerDvars()
 
 SetupCallbacks()
 {
-	level.spawnPlayer = ::spawnPlayer;
+        level.spawnPlayer = ::spawnPlayer;
 	level.spawnClient = ::spawnClient;
 	level.spawnSpectator = ::spawnSpectator;
 	level.spawnIntermission = ::spawnIntermission;
 	level.onPlayerScore = ::default_onPlayerScore;
 	level.onTeamScore = ::default_onTeamScore;
-
 	level.onXPEvent = ::onXPEvent;
 	level.waveSpawnTimer = ::waveSpawnTimer;
-
 	level.onSpawnPlayer = ::blank;
 	level.onSpawnSpectator = ::default_onSpawnSpectator;
 	level.onSpawnIntermission = ::default_onSpawnIntermission;
 	level.onRespawnDelay = ::blank;
-
 	level.onTimeLimit = ::default_onTimeLimit;
 	level.onScoreLimit = ::default_onScoreLimit;
 	level.onDeadEvent = ::default_onDeadEvent;
 	level.onOneLeftEvent = ::default_onOneLeftEvent;
 	level.giveTeamScore = ::giveTeamScore;
 	level.givePlayerScore = ::givePlayerScore;
-
 	level._setTeamScore = ::_setTeamScore;
 	level._setPlayerScore = ::_setPlayerScore;
-
 	level._getTeamScore = ::_getTeamScore;
 	level._getPlayerScore = ::_getPlayerScore;
-
 	level.onPrecacheGametype = ::blank;
 	level.onStartGameType = ::blank;
 	level.onPlayerConnect = ::blank;
 	level.onPlayerDisconnect = ::blank;
 	level.onPlayerDamage = ::blank;
 	level.onPlayerKilled = ::blank;
-
 	level.onEndGame = ::blank;
-
 	level.autoassign = ::menuAutoAssign;
 	level.spectator = ::menuSpectator;
 	level.killspec = ::menuKillspec;
