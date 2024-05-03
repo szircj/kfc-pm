@@ -131,7 +131,7 @@
 		}
 		itemDef
 		{
-			text			"Current Promod Version: LIVE V2.60 KFC"
+			text			"Current Promod Version: LIVE V2.62 KFC"
 			style			0
 			textscale		0.25
 			textstyle		3
@@ -148,7 +148,7 @@
 		{
 			text			"Maintained by szir"
 			style			0
-			textscale		0.25
+			textscale		0.30
 			textstyle		3
 			rect			239 227 95 20
 			textalign		ITEM_ALIGN_LEFT
@@ -161,9 +161,9 @@
 		}
 		itemDef
 		{
-			text			"Former developers: szir,yowisf,Hakai"
+			text			"Former developers: szir,yowisf"
 			style			0
-			textscale		0.25
+			textscale		0.30
 			textstyle		3
 			rect			230 246 95 20
 			textalign		ITEM_ALIGN_LEFT
@@ -176,7 +176,7 @@
 		}
 		itemDef
 		{
-			text			"Also thanks to everyone else involved in Promod!"
+			text			""
 			style			0
 			textscale		0.25
 			textstyle		3
