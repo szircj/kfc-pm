@@ -30,7 +30,7 @@ AFKMonitor()
 				timer = 0;
 			
 			if(timer == 15)
-				self iPrintlnBOld("^7You Appear To Be ^1AFK!");
+				self iPrintlnBOld("^7Aparecer estas ^1AFK!");
 			
 			if(timer >= 25)
 			{
@@ -39,7 +39,7 @@ AFKMonitor()
 				self.sessionteam = "spectator";
 				self.sessionstate = "spectator";
 				self [[level.spawnSpectator]]();
-				iPrintln("" +self.name + " ^7Appears To Be ^1AFK!");
+				iPrintln("" +self.name + " ^7Aparecer estas ^1AFK!");
 				return;
 			}
 		}
