@@ -4,7 +4,7 @@
 Este repositorio contiene código en vivo del servidor de promoción.
 El mod es estable y tiene todos los problemas conocidos resueltos, puedes usarlo según tus necesidades libremente, solo deja créditos. Siéntete libre de contribuir al proyecto.
 
-Visítenos en [Discord KFC](https://discord.gg/Pss9ff2MH5) o únase al [servidor](https://www.gametracker.com/search/cod4/?query=KFC)
+
 
 ## Características
 
