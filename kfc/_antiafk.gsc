@@ -1,48 +1,84 @@
 // Made by szir for KFC Mod
-
 #include maps\mp\_utility;
 #include maps\mp\gametypes\_hud_util;
 
-init()
-{	
-	[[level.on]]("spawned", ::AFKMonitor);
+onInit()
+{
+    level.AFKThresholdMs = 180000; // This amount of time (in ms) serves as the threshold for marking a player as AFK
 }
 
-AFKMonitor()
+onPlayerLogin()
 {
-	level endon("vote started");
+    self _setAFK(false);
+    self thread _detectAFK();
+}
+
+onUserInfoChanged() // Renamed, FPS changed, whatever. Not AFK.
+{
+    self _setAFK(false);
+}
+
+onWASDPressed()
+{
+    self _setAFK(false);
+}
+
+onRPGFired(rpgEnt, weapName)
+{
+    self _setAFK(false);
+}
+
+onSpectatorClientChanged(newClient)
+{
+    self _setAFK(false);
+}
+
+onChatMessage()
+{
+    self _setAFK(false);
+}
+
+isAFK()
+{
+    return !isDefined(self) || self.isAFK;
+}
+
+_setAFK(AFKVal)
+{
+    if (AFKVal)
+    {
+        if (!isDefined(self.isAFK) || !self.isAFK)
+        {
+            self.isAFK = true;
+            self iprintln("^1You are now considered to be AFK");
+            self thread openCJ\events\onAFKChanged::main(true);
+        }
+    }
+    else
+    {
+        if (!isDefined(self.isAFK) || self.isAFK)
+        {
+            self.isAFK = false;
+            self iprintln("^2You are no longer considered AFK");
+            self thread openCJ\events\onAFKChanged::main(false);
+        }
+        
+        // Always update the AFK timer
+        self.AFKDetectTime = getTime() + level.AFKThresholdMs;
+    }
+}
+
+_detectAFK()
+{
     self endon("disconnect");
-	self endon("joined_spectators");
-    self endon("game_ended");
-	self endon("isKnifing");
-	self endon("inintro");
-	timer = 0;
-	while(isAlive(self))
-	{
-		ori = self.origin;
-		angles = self.angles;
-		wait 1;
-		if(isAlive(self) && self.sessionteam != "spectator")
-		{
-			if(self.origin == ori && angles == self.angles)
-				timer++;
-			else
-				timer = 0;
-			
-			if(timer == 15)
-				self iPrintlnBOld("^7Aparecer estas ^1AFK!");
-			
-			if(timer >= 25)
-			{
-				if(self.sessionstate == "playing" && (!isDefined(self.isPlanting) || !self.isPlanting) && !level.gameEnded && isDefined(self.carryObject))
-					self.carryObject thread maps\mp\gametypes\_gameobjects::setDropped();
-				self.sessionteam = "spectator";
-				self.sessionstate = "spectator";
-				self [[level.spawnSpectator]]();
-				iPrintln("" +self.name + " ^7Aparecer estas ^1AFK!");
-				return;
-			}
-		}
-		else timer = 0;
-	}
+    while(1)
+    {
+        // If AFK threshold exceeded and the player didn't press any button, then they are considered AFK
+        if (getTime() >= self.AFKDetectTime)
+        {
+            self _setAFK(true);
+        }
+
+        wait 1;
+    }
 }
