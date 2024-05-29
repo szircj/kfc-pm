@@ -13,7 +13,7 @@ onPlayerLogin()
     self thread _detectAFK();
 }
 
-onUserInfoChanged() // Renamed, FPS changed, whatever. Not AFK.
+onUserInfoChanged() 
 {
     self _setAFK(false);
 }
