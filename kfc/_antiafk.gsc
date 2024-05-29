@@ -51,7 +51,7 @@ _setAFK(AFKVal)
         {
             self.isAFK = true;
             self iprintln("^1You are now considered to be AFK");
-            self thread openCJ\events\onAFKChanged::main(true);
+            self thread kfc\events\onAFKChanged::main(true);
         }
     }
     else
@@ -60,7 +60,7 @@ _setAFK(AFKVal)
         {
             self.isAFK = false;
             self iprintln("^2You are no longer considered AFK");
-            self thread openCJ\events\onAFKChanged::main(false);
+            self thread kfc\events\onAFKChanged::main(false);
         }
         
         // Always update the AFK timer
