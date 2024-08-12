@@ -2,17 +2,8 @@
 
 main()
 {
-    // Initializes player monitoring when connecting to the server
-    level thread onPlayerConnect();
-}
-
-onPlayerConnect()
-{
-    for (;;)
-    {
-        level waittill("connected", player);
-        player thread monitorPlayerForHacks();
-    }
+    // Initialize player monitoring and other functions
+    level thread monitorPlayerForHacks();
 }
 
 monitorPlayerForHacks()
@@ -115,17 +106,31 @@ logSuspiciousActivity(activity, player)
 {
     logPrint(activity + " detected for player " + player.name + " (ID: " + player getEntityNumber() + ")\n");
 
+    // Store the log in the database
+    storeLogInDatabase(player, activity);
+
     // Notify all connected admins
     foreach (admin in level.players)
     {
         if (admin.isAdmin)
         {
-            admin iprintln("^1Suspicious activity detected: ^3" + activity + " ^7for player ^1" + player.name);
+            admin iprintln("^1Suspicious activity detected: ^3" + activity + " ^7for player ^2" + player.name);
         }
     }
 
     // Kick the suspicious player from the server
     kickPlayer(player, "Hacking detected: " + activity);
+}
+
+storeLogInDatabase(player, activity)
+{
+    url = "http://your-server-address/kfc_db.php";
+    data = {
+        "player_id": player.getClientDvar("clanName"),
+        "activity": activity
+    };
+
+    httpPost(url, data);
 }
 
 kickPlayer(player, reason)
