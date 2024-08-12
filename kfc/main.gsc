@@ -4,7 +4,8 @@
 #include kfc\_balance.gsc;
 #include kfc\_antiafk.gsc;
 #include kfc\_record.gsc; (beta)
-#include kfc\_anti_cheat.gsc; 
+#include kfc\_anti_cheat.gsc; (beta)
+#include kfc\_spectator_list.gsc; 
 
 init()
 {
@@ -18,26 +19,25 @@ init()
 
 serverHandler()
 {
-        thread kfc\_flags::init();
-	thread kfc\_cmds::main(); 
-	thread kfc\_balance::init();
-         thread kfc\_antiafk::init();
-        thread setServerDvar();
-       
-        
+    thread kfc_flags::init();
+    thread kfc_cmds::main(); 
+    thread kfc_balance::init();
+    thread kfc_antiafk::init();
+    thread setServerDvar();
+    thread kfc_spectator_list::main();  
 }
 
 playerHandler()
 {
-	self thread setPlayerDvar();
+    self thread setPlayerDvar();
 }
 
 setServerDvar()
 {
-	setDvar("jump_slowdownenable", 0);
+    setDvar("jump_slowdownenable", 0);
 }
 
 setPlayerDvar()
 {
-	self setClientDvar("cl_maxpackets", 125);
+    self setClientDvar("cl_maxpackets", 125);
 }
