@@ -2,7 +2,6 @@
 
 main()
 {
-    // Initialize player monitoring and other functions
     level thread monitorPlayerForHacks();
 }
 
