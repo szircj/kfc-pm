@@ -1,4 +1,8 @@
 // Made by szir & yowisf for KFC Mod
+#include maps\mp\_utility;
+#include maps\mp\gametypes\_hud_util;
+#include kfc\_balance.gsc;
+#include kfc\_antiafk.gsc;
 
 init()
 {
