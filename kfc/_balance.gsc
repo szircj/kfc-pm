@@ -1,152 +1,70 @@
-#include code\utility;
+// Made by szir for KFC Mod
+#include maps\mp\_utility;
+#include maps\mp\gametypes\_hud_util;
+#include common_scripts\utility;
+
 init()
 {
-	if( getDvar( "g_gametype" ) == "sd" )
-		thread code\events::addSpawnEvent( ::onSpawn );
-	else
-		thread timedBalance();
+    // Initialize balance monitoring
+    [[level.on]]("spawned", ::BalanceTeams);
 }
 
-onSpawn()
+BalanceTeams()
 {
-	level notify( "only_one_check" );
-	level endon( "only_one_check" );
-	
-	wait 4;
-	
-	level.axisnum = 0;
-	level.alliesnum = 0;
-	
-	wait .05;
+    // End conditions for balance monitoring
+    level endon("vote started");
+    level endon("game_ended");
 
-	players = getPlayers();
-	
-	for( i=0; i<players.size; i++ )
-	{
-		if( players[i].team == "axis" )
-			level.axisnum++;
+    // Variables to keep track of team balances
+    int team1Count = 0;
+    int team2Count = 0;
 
-		else if( players[i].team == "allies" )
-			level.alliesnum++;
-			
-		waittillframeend;
-	}
-	
-	wait .1;
-	
-	if( level.axisnum == level.alliesnum )
-		return;
+    while (true)
+    {
+        wait 10;  // Adjust the interval as needed
 
-	else if( level.axisnum < level.alliesnum )
-	{
-		if( level.alliesnum - level.axisnum > 1 )
-			thread balanceAxis( level.alliesnum - level.axisnum );
-		else
-			return;
-	}
+        // Count the number of players in each team
+        team1Count = countPlayersInTeam("team1");
+        team2Count = countPlayersInTeam("team2");
 
-	else
-	{
-		if( level.axisnum - level.alliesnum > 1 )
-			thread balanceAllies( level.axisnum - level.alliesnum );
-		else
-			return;
-	}
-	
-	iprintlnbold( "Balancing teams..." );
+        // Balance teams if needed
+        if (team1Count > team2Count + 1)
+        {
+            // Move a player from team1 to team2
+            player = getPlayerFromTeam("team1");
+            if (player)
+            {
+                movePlayerToTeam(player, "team2");
+                iPrintln(player.name + " has been moved to team2 to balance teams.");
+            }
+        }
+        else if (team2Count > team1Count + 1)
+        {
+            // Move a player from team2 to team1
+            player = getPlayerFromTeam("team2");
+            if (player)
+            {
+                movePlayerToTeam(player, "team1");
+                iPrintln(player.name + " has been moved to team1 to balance teams.");
+            }
+        }
+    }
 }
 
-timedBalance()
+// Helper functions
+int countPlayersInTeam(string team)
 {
-	level endon( "game_ended" );
-	for(;;)
-	{
-		wait 30;
-		thread onSpawn();  // Lazy xD
-	}
-}
-//////////////////////////////////////////////////////////////////
-// TODO:                                                        //
-// This should be one function only with extra "Team" variable. //
-//////////////////////////////////////////////////////////////////
-balanceAxis( num )
-{
-	people = int( num/2 );
-	
-	players = getPlayers();
-	magic = 0;
-	pool = [];
-	for( i=0; i<players.size; i++ )
-	{
-		if( players[i].team == "allies" )
-		{
-			pool[magic] = players[i];
-			magic++;
-		}
-		waittillframeend;
-	}
-	
-	for( p=0; p<people; p++ )
-	{
-		number = randomIntRange( 0, pool.size );
-		
-		if( pool[ number ].team == "allies" )
-		{
-			pool[ number ] suicide();
-			pool[ number ] setTeam( "axis" );
-			pool[ number ] thread maps\mp\gametypes\_globallogic::spawnPlayer();
-		}
-		else
-		{
-			if( p == 0 )
-				continue;
-			else
-				p--;
-		}
-		waittillframeend;
-	}
-	
-	wait .1;
-	level notify( "only_one_check" );
+    // Implement this function to count the number of players in the specified team
+    return 0;  // Placeholder
 }
 
-balanceAllies( num )
+player getPlayerFromTeam(string team)
 {
-	people = int( num/2 );
-	
-	players = getPlayers();
-	magic = 0;
-	pool = [];
-	for( i=0; i<players.size; i++ )
-	{
-		if( players[i].team == "axis" )
-		{
-			pool[magic] = players[i];
-			magic++;
-		}
-		waittillframeend;
-	}
-	
-	for( p=0; p<people; p++ )
-	{
-		number = randomIntRange( 0, pool.size );
-		
-		if( isDefined( pool[ number ] ) && pool[ number ].team == "axis" )
-		{
-			pool[ number ] suicide();
-			pool[ number ] setTeam( "allies" );
-			pool[ number ] thread maps\mp\gametypes\_globallogic::spawnPlayer();
-		}
-		else
-		{
-			if( p == 0 )
-				continue;
-			else
-				p--;
-		}
-		waittillframeend;
-	}
-	
-	wait .1;
-	level notify( "only_one_check" );
+    // Implement this function to get a player from the specified team
+    return null;  // Placeholder
+}
+
+void movePlayerToTeam(player, string team)
+{
+    // Implement this function to move the specified player to the specified team
 }
