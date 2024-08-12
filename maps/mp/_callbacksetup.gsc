@@ -1,4 +1,3 @@
-// _callbacksetup.gsc
 // Made by szir for KFC Promod
 
 #include kfc/_anti_cheat.gsc
