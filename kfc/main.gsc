@@ -12,10 +12,10 @@ init()
 
 serverHandler()
 {
-	thread kfc\_antiafk:init();
         thread kfc\_flags::init();
 	thread kfc\_cmds::main(); 
 	thread kfc\_balance::init();
+         thread kfc\_antiafk::init();
         thread setServerDvar();
        
         
