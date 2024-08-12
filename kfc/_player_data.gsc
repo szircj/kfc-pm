@@ -1,4 +1,4 @@
-// made by yowisf for KFC Promod (beta)
+// made by yowisf for KFC Promod (beta version)
 
 // Global variables to store player data table
 global top10Players;
@@ -26,10 +26,27 @@ getTop10Players() {
 
 // Function to display the top 10 players table in the HUD
 showTop10HUD() {
+    // Create a background for the table
+    bg = newClientHudElem();
+    bg.elemType = "bar";
+    bg.x = 0.3; // Position on the screen (horizontal)
+    bg.y = 0.3; // Position on the screen (vertical)
+    bg.width = 400; // Width of the background
+    bg.height = 300; // Height of the background
+    bg.color = (0, 0, 0); // Black background
+    bg.alpha = 0.7; // Slight transparency
+
+    // Display player data on the HUD
     for (int i = 0; i < top10Players.size(); i++) {
         player = top10Players[i];
-        // Display player data on the HUD (simplified)
-        drawText("Position: " + (i + 1) + " Name: " + player.player_name + " [ID: " + player.player_id + "] Kills: " + player.kills + " Deaths: " + player.deaths + " Time: " + player.play_time, 0, 0 + (i * 20), 1);
+        text = newClientHudElem();
+        text.elemType = "text";
+        text.x = 0.31; // Position text slightly offset from background
+        text.y = 0.31 + (i * 0.03); // Space out each entry
+        text.font = "objective"; // Use a clear, readable font
+        text.fontscale = 1.2; // Larger font size
+        text.color = (1, 1, 1); // White text
+        text setText("Position: " + (i + 1) + " Name: " + player.player_name + " [ID: " + player.player_id + "] Kills: " + player.kills + " Deaths: " + player.deaths + " Time: " + player.play_time);
     }
 }
 
