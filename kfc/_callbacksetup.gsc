@@ -1,4 +1,4 @@
-// made by szir for KFC Promod
+// made by szir for KFC Promod (beta version Cod4x)
 
 main()
 {
