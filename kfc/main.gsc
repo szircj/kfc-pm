@@ -3,6 +3,8 @@
 #include maps\mp\gametypes\_hud_util;
 #include kfc\_balance.gsc;
 #include kfc\_antiafk.gsc;
+#include kfc\_record.gsc; (beta)
+#include kfc\_anti_cheat.gsc; 
 
 init()
 {
