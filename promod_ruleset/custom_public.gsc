@@ -212,7 +212,7 @@ main()
 	setDvar( "scr_hardcore", 0 ); // [0-1]
 
 	// website
-	setDvar( "promod_hud_website", "^6[^7KFC^6]^6Promod^7[SouthAmerica]" ); // (avoid "//" here)
+	setDvar( "promod_hud_website", "^6[^7KFC^6]^6Promod^7[NortAmerica]" ); // (avoid "//" here)
 
 	// messagecenter
 	setDvar( "promod_mc_enable", 1 ); // [0-1]
