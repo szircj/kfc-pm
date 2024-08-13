@@ -1,10 +1,9 @@
 // Made by szir & yowisf for KFC Mod
 #include maps\mp\_utility;
 #include maps\mp\gametypes\_hud_util;
-#include kfc\_balance.gsc;
 #include kfc\_antiafk.gsc;
-#include kfc\_record.gsc; (beta)
-#include kfc\_anti_cheat.gsc; (beta)
+#include kfc\_record.gsc; 
+#include kfc\_anti_cheat.gsc;
 #include kfc\_spectator_list.gsc; 
 
 init()
@@ -21,7 +20,6 @@ serverHandler()
 {
     thread kfc_flags::init();
     thread kfc_cmds::main(); 
-    thread kfc_balance::init();
     thread kfc_antiafk::init();
     thread setServerDvar();
     thread kfc_spectator_list::main();  
