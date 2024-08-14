@@ -5,7 +5,7 @@
 init()
 {
     // Initialize balance monitoring
-    [[level.on]]("spawned", ::BalanceTeams);
+     level.on("spawned", BalanceTeams);
 }
 
 BalanceTeams()
